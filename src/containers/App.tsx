@@ -7,20 +7,23 @@ import { CanvasContainer } from './CanvasContainer'
 import { Sphere } from '../components/Sphere'
 
 const AnimatedMain = styled.main`
-    height: 100%;
+  height: 100%;
 `
 
 export const App: FC = () => {
-    const [{ background }, setBg] = useSpring({
-        background: 'linear-gradient(0, #9491e2 0%, #119DA4 100%)'
-    }, [])
+  const [{ background }, setBg] = useSpring(
+    {
+      background: 'linear-gradient(0, #9491e2 0%, #119DA4 100%)',
+    },
+    []
+  )
 
-    return (
-        <AnimatedMain as={a.main} style={{ background }}>
-            <Navigation />
-            <CanvasContainer>
-                <Sphere setBg={setBg} />
-            </CanvasContainer>
-        </AnimatedMain>
-    )
+  return (
+    <AnimatedMain as={a.main} style={{ background }}>
+      <Navigation />
+      <CanvasContainer>
+        <Sphere setBg={setBg} />
+      </CanvasContainer>
+    </AnimatedMain>
+  )
 }
