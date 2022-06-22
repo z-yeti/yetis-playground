@@ -15,7 +15,7 @@ type SphereProps = {
   setBg: (background: Record<string, unknown>) => void
 }
 
-export const Sphere: FC<SphereProps> = ({ setBg }) => {
+export const Blob: FC<SphereProps> = ({ setBg }) => {
   const sphere = useRef<THREE.Mesh>(null)
   const light = useRef<THREE.PointLight>(null)
   const [active, setActive] = useState(false)

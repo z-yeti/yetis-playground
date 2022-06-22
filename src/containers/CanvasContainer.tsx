@@ -3,7 +3,7 @@ import { Canvas } from '@react-three/fiber'
 import styled from 'styled-components'
 
 const CanvasWrapper = styled.div`
-  height: calc(100vh - 70px);
+  height: 100%;
 `
 
 type CanvasContainerProps = {

@@ -1,4 +1,5 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const NavBar = styled.nav`
@@ -8,20 +9,36 @@ const NavBar = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 0.5rem 0 1.5rem;
+  padding: 0 1.5rem;
+  background: #2d2a32;
+  color: #fdfffc;
 `
 
-const SiteTitle = styled.a`
+const SiteLinks = styled.ul`
+  display: flex;
+`
+
+const SiteLink = styled(Link)`
   text-decoration: none;
-  color: #111;
-  font-size: 1.5rem;
   font-family: 'Montserrat', sans-serif;
+  color: inherit;
+  &:not(:last-child) {
+    margin-right: 1rem;
+  }
+`
+
+const SiteLinkTitle = styled(SiteLink)`
+  font-size: 1.5rem;
 `
 
 export const Navigation: FC = () => {
   return (
     <NavBar>
-      <SiteTitle href='/'>{`<Yeti'sPlayground />`}</SiteTitle>
+      <SiteLinkTitle to='/'>{`<Yeti'sPlayground />`}</SiteLinkTitle>
+      <SiteLinks>
+        <SiteLink to='/start-page'>Start Page</SiteLink>
+        <SiteLink to='/threejs/blob'>Blob</SiteLink>
+      </SiteLinks>
     </NavBar>
   )
 }
